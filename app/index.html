@@ -14,6 +14,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -21,16 +24,36 @@
     <![endif]-->
 
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-      <li>HTML5 Boilerplate</li>
-      <li>Sass</li>
+    <section class="main-container centered">
+      <header class="main-header">
+        <div class="header-image-container">
+          <img src="images/foto-header.png">
+          <h1>Trabalhe no Elo7</h1>
+        </div>
+        <p class="header-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lectus est, malesuada non lectus quis, mollis hendrerit sapien. Nunc a volutpat arcu. Aliquam eleifend diam et sodales aliquet.
+        </p>
+        <a href="#openJobs">Vagas em aberto</a>
+      </header>
 
-      </ul>
-    </div>
-
+      <section class="highlight-container">
+        <section class="highlight-container-line">
+          <img src="images/placeholder-video.png" class="small-video">
+          <article class="video-text">
+            <h2 class="section-title video-title">Palavra do CEO</h2>
+            <p class="section-subtitle video-subtitle">Carlos Curioni</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lectus est, malesuada non lectus quis, mollis hendrerit sapien. Nunc a volutpat arcu. Aliquam eleifend diam et sodales aliquet.</p>
+          </article>
+        </section>
+        <h2 class="section-title centered-text">Conheça nosso time fora de série</h2>
+        <div class="team-photos-container">
+          <img class="team-photo" src="images/beatriz.png">
+          <img class="team-photo" src="images/guto.png">
+          <img class="team-photo" src="images/david.png">
+          <img class="team-photo" src="images/camila.png">
+        </div>
+      </section>
+    </section>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -38,18 +61,8 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
