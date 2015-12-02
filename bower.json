@@ -1,0 +1,8 @@
+{
+  "name": "elo",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "html5shiv": "~3.7.3"
+  }
+}
