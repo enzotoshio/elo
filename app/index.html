@@ -33,7 +33,7 @@
         <p class="main-header-text centered-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lectus est, malesuada non lectus quis, mollis hendrerit sapien. Nunc a volutpat arcu. Aliquam eleifend diam et sodales aliquet.
         </p>
-        <a href="#openJobs">Vagas em aberto</a>
+        <a href="#open-jobs-title" class="highlight-link scrollable-link">Vagas em aberto &gt;&gt;</a>
       </header>
 
       <section class="highlight-container">
@@ -45,7 +45,11 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lectus est, malesuada non lectus quis, mollis hendrerit sapien. Nunc a volutpat arcu. Aliquam eleifend diam et sodales aliquet.</p>
           </article>
         </section>
-        <h2 class="section-title centered-text">Conheça nosso time fora de série</h2>
+        <h2 class="section-title centered-text">
+          Conheça nosso time
+          <br />
+          fora de série
+        </h2>
         <div class="team-photos-container">
           <img class="team-photo" src="images/beatriz.png">
           <img class="team-photo" src="images/guto.png">
@@ -53,6 +57,58 @@
           <img class="team-photo" src="images/camila.png">
         </div>
       </section>
+
+      <section class="qualities-abstract-container">
+        <ul class="qualities-abstract-list">
+          <li class="qualities-abstract-column">
+            <img src="images/qualidade.png">
+            <h3 class="quality-abstract-title list-title">Qualidade</h3>
+            <div class="quality-abstract-text">
+              <p class="highlighted-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh</p>
+            </div>
+          </li>
+          <li class="qualities-abstract-column">
+            <img src="images/descontracao.png">
+            <h3 class="quality-abstract-title list-title">Ambiente</h3>
+            <div class="quality-abstract-text">
+              <p class="highlighted-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+            </div>
+          </li>
+          <li class="qualities-abstract-column">
+            <img src="images/atividades.png">
+            <h3 class="quality-abstract-title list-title">Atividades</h3>
+            <div class="quality-abstract-text">
+              <p class="highlighted-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+            </div>
+          </li>
+        </ul>
+        <a href="#openJobs" class="highlight-link">saiba mais &gt;&gt;</a>
+      </section>
+
+      <footer class="main-footer">
+        <img src="images/foto-bottom.png">
+        <h2 class="section-title">saiba mais</h2>
+        <section>
+          <h3 id="open-jobs-title" class="open-jobs-list-title list-title centered-text">desenvolvimento</h3>
+          <ul class="open-jobs-list">
+            <li class="open-jobs-list-item">
+              <a href="#jobs" class="open-job-link">Desenvolvedor Mobile Senior (android e iOS)</a>
+              <span class="job-location-text">Vila Olímpia - São Paulo, Brasil</span>
+            </li>
+            <li class="open-jobs-list-item">
+              <a href="#jobs" class="open-job-link">Desenvolvedor Java Senior</a>
+              <span class="job-location-text">Vila Olímpia - São Paulo, Brasil</span>
+            </li>
+            <li class="open-jobs-list-item">
+              <a href="#jobs" class="open-job-link">Desenvolvedor Front-End</a>
+              <span class="job-location-text">Vila Olímpia - São Paulo, Brasil</span>
+            </li>
+          </ul>
+        </section>
+      </footer>
     </section>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -64,5 +120,10 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+    debugger
+      window.App.init();
+    </script>
 </body>
 </html>

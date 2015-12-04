@@ -4,8 +4,15 @@
 
 $primary-background-color: #F8F8F8
 $primary-text-color: #7A7471
+$primary-link-color: #4BA2A2
+$primary-link-hover-color: #75BFBF
 $secondary-text-color: #F8A833
-$default-margin: 46px
+$default-margin: 50px
+
+a
+  color: $primary-link-color
+  &:hover
+    color: $primary-link-hover-color
 
 body
   background-color: #FFF
@@ -13,6 +20,7 @@ body
   color: #000
   width: 100%
   height: 100%
+  color: $primary-text-color
 
 .main-container
   width: 960px
@@ -21,6 +29,13 @@ body
 
 .main-header
   display: block
+  text-align: center
+
+.main-header-text
+  width: 100%
+  font-size: 16px
+  line-height: 28px
+  padding: 26px 50px 19px 50px
 
 .centered
   margin-left: auto
@@ -34,6 +49,18 @@ body
   background-color: $primary-background-color
   padding: $default-margin
 
+.highlight-link
+  display: inline-block
+  padding: 20px 12px 0
+  text-transform: uppercase
+  border-top: 1px solid #C9C9C9
+  text-decoration: none
+  font-weight: bold
+  margin-bottom: 50px
+
+.highlighted-paragraph
+  letter-spacing: 2.3px
+
 .highlight-container-line
   width: 100%
   overflow: hidden
@@ -42,9 +69,11 @@ body
   float: left
 
 .section-title
-  font-size: 24px
+  font-size: 22px
+  line-height: 28px
   color: $primary-text-color
   font-weight: bold
+  text-transform: uppercase
   margin-top: $default-margin
   margin-bottom: $default-margin
   &.video-title
@@ -55,38 +84,88 @@ body
   color: $secondary-text-color
   font-size: 18px
   &.video-subtitle
+    font-style: italic
     margin-bottom: 38px
+
+.list-title
+  font-size: 16px
+  color: $primary-text-color
+  font-weight: bold
+  text-transform: uppercase
 
 .video-text
   margin-left: $default-margin
   overflow: hidden
   float: left
   width: auto
-  max-width: 422px
+  max-width: 410px
   font-size: 16px
   line-height: 26px
-  color: $primary-text-color
+
+.team-photos-container
+  overflow: hidden
 
 .team-photo
   display: block
   float: left
-  &:not(last-child)
-    margin-right: 9px
+  &:not(:last-child)
+    margin-right: 9.33px
+
+.main-header-image-container
+  position: relative
+  overflow: hidden
+  img
+    z-index: 1
 
 .main-title
   position: absolute
-  top: 50%
+  bottom: 125px
   width: 100%
   z-index: 2
   color: #FFF
   font-size: 50px
   font-weight: bold
-  text-shadow: 1px 2px 10px #000
+  text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5)
 
-.main-header-image-container
-  position: relative
-  img
-    z-index: 1
+.qualities-abstract-container
+  margin-top: 56px
+  overflow: hidden
+  padding: 0 $default-margin
+  text-align: center
 
-.main-header-text
-  width: 100%
+.qualities-abstract-list
+  display: block
+  overflow: hidden
+  list-style: none
+  margin-bottom: 30px
+
+.qualities-abstract-column
+  float: left
+  width: 260px
+  text-align: center
+  &:not(:last-child)
+    margin-right: 40px
+
+.quality-abstract-title
+  margin: 30px 0 40px
+
+.quality-abstract-text
+  text-align: justify
+  font-size: 16px
+  line-height: 26px
+
+.main-footer
+  padding: 0 50px
+
+.open-jobs-list-title
+  margin-bottom: 60px
+
+.open-jobs-list-item
+  margin-bottom: 23px
+  .open-job-link
+    text-transform: capitalize
+    font-weight: bold
+    text-decoration: none
+  .job-location-text
+    font-weight: bold
+    float: right
