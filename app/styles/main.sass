@@ -7,6 +7,7 @@ $primary-text-color: #7A7471
 $primary-link-color: #4BA2A2
 $primary-link-hover-color: #75BFBF
 $secondary-text-color: #F8A833
+$primary-hover-color: #F8A833
 $default-margin: 50px
 
 a
@@ -59,13 +60,20 @@ body
   margin-bottom: 50px
 
 .highlighted-paragraph
-  letter-spacing: 2.3px
+  letter-spacing: 2px
 
 .highlight-container-line
   width: 100%
   overflow: hidden
 
+.hoverable-video:hover
+  cursor: pointer
+  transition: border 0.2s linear
+  border: 3px solid $primary-hover-color
+
 .small-video
+  width: 400px
+  height: 220px
   float: left
 
 .section-title
@@ -108,8 +116,9 @@ body
 .team-photo
   display: block
   float: left
-  &:not(:last-child)
-    margin-right: 9.33px
+  margin-right: 9.33px
+  &.last
+    margin-right: 0
 
 .main-header-image-container
   position: relative
@@ -143,8 +152,9 @@ body
   float: left
   width: 260px
   text-align: center
-  &:not(:last-child)
-    margin-right: 40px
+  margin-right: 40px
+  &.last
+    margin-right: 0
 
 .quality-abstract-title
   margin: 30px 0 40px
