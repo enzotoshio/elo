@@ -24,7 +24,7 @@ App.scrollToAnchor = function(params) {
         Modernizr.testAllProps('transition');
 
   if (!hasTransformAndTransition) {
-    return;  
+    return;
   }
 
   event.preventDefault();
@@ -42,7 +42,7 @@ App.scrollToAnchor = function(params) {
     bodyEl.removeAttribute('style');
     window.scrollTo(0, anchorPosition);
   }, transitionDuration);
-}
+};
 
 App.init = function() {
   Helpers.addEvent('click', 'scrollable-link', this.scrollToAnchor);
