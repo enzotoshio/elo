@@ -11,8 +11,8 @@ Helpers.addEvent = function(eventName, elementClass, callback) {
 
 window.App = {};
 
-App.scrollToAnchor = function(params) {
-  var targetHref = params.target.href.split('/'),
+App.scrollToAnchor = function(event) {
+  var targetHref = event.target.href.split('/'),
       anchorId = targetHref[targetHref.length - 1].replace('#', ''),
       anchorPosition = document.getElementById(anchorId).offsetTop,
       bodyEl = document.body,
