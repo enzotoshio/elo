@@ -24,10 +24,6 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
       js: {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
         tasks: ['jshint'],
@@ -146,7 +142,7 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 8', 'ie 9']
       },
       dist: {
         files: [{
@@ -155,18 +151,6 @@ module.exports = function (grunt) {
           src: '{,*/}*.css',
           dest: '.tmp/styles/'
         }]
-      }
-    },
-
-    // Automatically inject Bower components into the HTML file
-    wiredep: {
-      app: {
-        ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html']
-      },
-      sass: {
-        src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -185,12 +169,28 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      dist: {
+        files: {
+          '<% config.dist %>/main.js': ['scripts/main.js'],
+          '<% config.dist %>/vendor.js': ['scripts/modernizr.js'],
+        }
+      }
+    },
+
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
       options: {
-        dest: '<%= config.dist %>'
+        root: '<%= config.app %>',
+        dest: '<%= config.dist %>',
+        flow: {
+          steps: {
+            js: ['uglifyjs']
+          },
+          post: {}
+        }
       },
       html: '<%= config.app %>/index.html'
     },
@@ -201,7 +201,8 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= config.dist %>',
           '<%= config.dist %>/images',
-          '<%= config.dist %>/styles'
+          '<%= config.dist %>/styles',
+          '<%= config.dist %>/scripts'
         ]
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
@@ -269,6 +270,9 @@ module.exports = function (grunt) {
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
+        }, {
+          src: 'bower_components/html5shiv/dist/html5shiv.min.js',
+          dest: '<%= config.dist %>/bower_components/html5shiv/dist/html5shiv.min.js'
         }]
       },
       styles: {
@@ -307,7 +311,6 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -322,11 +325,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'copy:dist',
+    'uglify:generated',
     'rev',
     'usemin',
     'htmlmin'
