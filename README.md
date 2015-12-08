@@ -47,9 +47,13 @@ $ grunt serve
 
 Or Docker:
 
-- sudo docker build -t elo .
-- sudo docker run -ti -p 8080:9000 -v `pwd`/app:/src/app elo
+```sh
+$ sudo docker build -t elo .
+$ sudo docker run -ti -p 8080:9000 -v `pwd`/app:/src/app elo
+```
 
 To execute the bash inside Docker:
 
-- sudo run -ti -p 8080:9000 elo /bin/bash
+```sh
+$ sudo run -ti -p 8080:9000 elo /bin/bash
+```
