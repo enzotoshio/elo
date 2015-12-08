@@ -9,6 +9,9 @@ What was used on the project:
   - **Docker** - To provide an easier way to run the project
 
 > The landing page should run on IE(>8), Firefox and Chrome.
+> Project branches:
+> - **master**: crossbrowser
+> - **flex**: making use of css3 flex-box to order, align and interspace items
 
 ### Installation
 
