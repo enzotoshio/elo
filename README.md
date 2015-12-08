@@ -8,7 +8,7 @@ What was used on the project:
   - **HTML5 & SASS & JS** - Project front-end
   - **Docker** - To provide an easier way to run the project
 
-> The landing page should run on IE(>8), Firefox and Chrome.
+> The landing page should run on IE(gte 8), Firefox and Chrome.
 
 
 > Project branches:
@@ -29,7 +29,7 @@ $ gem install sass
 NodeJs + NPM
 
 ```sh
-$ sudo apt-get install -y nodejs npm
+$ sudo apt-get install -y nodejs npm | sudo brew install nodejs npm
 $ sudo apt-get install -y build-essential nodejs-legacy
 ```
 
